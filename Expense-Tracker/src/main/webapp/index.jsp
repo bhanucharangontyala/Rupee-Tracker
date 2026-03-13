@@ -1,8 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>₹-Tracker - Expense Tracker</title>
+<title>â¹-Tracker - Expense Tracker</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
@@ -175,7 +177,7 @@ footer {
 	<!-- Navbar -->
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
 		<div class="container">
-			<a class="navbar-brand fw-bold fs-4" href="#">₹-Tracker</a>
+			<a class="navbar-brand fw-bold fs-4" href="#">â¹-Tracker</a>
 
 			<!-- Toggler Button -->
 			<button class="navbar-toggler" type="button"
@@ -220,12 +222,12 @@ footer {
 		<div class="container py-5">
 			<div class="row align-items-center">
 				<div class="col-lg-6 mb-4 mb-lg-0">
-					<h2 class="section-title">About ₹-Tracker</h2>
+					<h2 class="section-title">About â¹-Tracker</h2>
 					<p class="lead">Smart money management for everyone</p>
-					<p>₹-Tracker is a comprehensive personal finance application
+					<p>â¹-Tracker is a comprehensive personal finance application
 						designed to help you take control of your financial life. Whether
 						you're trying to save for a big purchase, pay off debt, or simply
-						understand where your money goes each month, ₹-Tracker provides
+						understand where your money goes each month, â¹-Tracker provides
 						the tools you need.</p>
 					<p>Our intuitive platform makes it easy to track expenses, set
 						budgets, visualize spending patterns, and achieve your financial
@@ -419,7 +421,7 @@ footer {
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4 mb-4 mb-md-0">
-					<h5 class="fw-bold mb-3">₹-Tracker</h5>
+					<h5 class="fw-bold mb-3">â¹-Tracker</h5>
 					<p>Your trusted partner in financial management. Take control
 						of your expenses and achieve your financial goals with our
 						intuitive platform.</p>
@@ -466,7 +468,7 @@ footer {
 			<hr class="my-4 bg-light">
 
 			<div class="text-center">
-				<p class="mb-0">&copy; 2026 ₹-Tracker. All rights reserved.</p>
+				<p class="mb-0">&copy; 2026 â¹-Tracker. All rights reserved.</p>
 			</div>
 		</div>
 	</footer>

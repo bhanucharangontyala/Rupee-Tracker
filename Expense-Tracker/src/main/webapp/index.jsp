@@ -19,7 +19,7 @@
 	--light-color: #f8f9fa;
 	--dark-color: #212529;
 }
-/* hii how are you */
+
 body {
 	margin: 0;
 	padding: 0;
@@ -177,7 +177,7 @@ footer {
 	<!-- Navbar -->
 	<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
 		<div class="container">
-			<a class="navbar-brand fw-bold fs-4" href="#">â¹-Tracker</a>
+			<a class="navbar-brand fw-bold fs-4" href="#">&#8377;-Tracker</a>
 
 			<!-- Toggler Button -->
 			<button class="navbar-toggler" type="button"
@@ -222,7 +222,7 @@ footer {
 		<div class="container py-5">
 			<div class="row align-items-center">
 				<div class="col-lg-6 mb-4 mb-lg-0">
-					<h2 class="section-title">About â¹-Tracker</h2>
+					<h2 class="section-title">About &#8377;-Tracker</h2>
 					<p class="lead">Smart money management for everyone</p>
 					<p>â¹-Tracker is a comprehensive personal finance application
 						designed to help you take control of your financial life. Whether
@@ -468,7 +468,7 @@ footer {
 			<hr class="my-4 bg-light">
 
 			<div class="text-center">
-				<p class="mb-0">&copy; 2026 â¹-Tracker. All rights reserved.</p>
+				<p class="mb-0">&copy; 2026 &#8377;-Tracker. All rights reserved.</p>
 			</div>
 		</div>
 	</footer>

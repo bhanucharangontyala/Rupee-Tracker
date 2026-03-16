@@ -14,7 +14,7 @@ User user = (User) session.getAttribute("user");
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Dashboard | ₹-Tracker</title>
+<title>Dashboard | &#8377;-Tracker</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- Bootstrap CSS -->
@@ -26,21 +26,30 @@ User user = (User) session.getAttribute("user");
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
 	rel="stylesheet">
+	
+<!-- Custom CSS -->
 <link href="./styles/dashboard.css" rel="stylesheet">
-<style>
 
-</style>
 </head>
 <body>
 
 	<!-- ===== Desktop Sidebar ===== -->
-	<div class="sidebar-desktop d-none d-lg-block">
-		<a href="Dashboard?page=home"> <i class="bi bi-currency-rupee"></i><span>Dashboard</span>
-		</a> <a href="Dashboard?page=expenses"> <i class="bi bi-cash-stack"></i>
-			<span>Expenses</span>
-		</a> <a href="Dashboard?page=categories"> <i class="bi bi-tags"></i> <span>Categories</span>
-		</a> <a href="Dashboard?page=charts"><i class="bi bi-bar-chart"></i><span>Charts</span></a>
-		<a href="Dashboard?page=history"><i class="bi bi-clock-history"></i><span>History</span></a>
+	<div class="sidebar-desktop bg-primary d-none d-lg-block">
+		<a href="Dashboard?page=home" class="<%= pageName.equals("home") ? "active" : "" %>"> 
+			<i class="bi bi-currency-rupee"></i><span>Dashboard</span>
+		</a> 
+		<a href="Dashboard?page=expenses" class="<%= pageName.equals("expenses") ? "active" : "" %>"> 
+			<i class="bi bi-cash-stack"></i><span>Expenses</span>
+		</a> 
+		<a href="Dashboard?page=categories" class="<%= pageName.equals("categories") ? "active" : "" %>"> 
+			<i class="bi bi-tags"></i> <span>Categories</span>
+		</a> 
+		<a href="Dashboard?page=charts" class="<%= pageName.equals("charts") ? "active" : "" %>">
+			<i class="bi bi-bar-chart"></i><span>Charts</span>
+		</a>
+		<a href="Dashboard?page=history" class="<%= pageName.equals("history") ? "active" : "" %>">
+			<i class="bi bi-clock-history"></i><span>History</span>
+		</a>
 	</div>
 
 	<!-- ===== Main Content ===== -->
@@ -56,7 +65,7 @@ User user = (User) session.getAttribute("user");
 			</button>
 
 			<!-- Amount Left -->
-			<div class="amount-box">₹ ${not empty sessionScope.income and not empty sessionScope.totalEx 
+			<div class="amount-box">&#8377; ${not empty sessionScope.income and not empty sessionScope.totalEx 
     ? sessionScope.income - sessionScope.totalEx 
     : 0}
 				Left This Month</div>
@@ -84,25 +93,25 @@ User user = (User) session.getAttribute("user");
 			%>
 			<div class="row g-4">
 				<div class="col-xl-4 col-md-6 col-12">
-					<div class="card shadow-sm p-4">
+					<div class="dashboard-card card-income card shadow-sm p-4">
 						<h6>Total Expenses</h6>
-						<h3 class="text-danger">₹ ${not empty sessionScope.totalEx 
+						<h3 class="text-danger">&#8377; ${not empty sessionScope.totalEx 
     ? sessionScope.totalEx 
     : 0}</h3>
 					</div>
 				</div>
 
 				<div class="col-xl-4 col-md-6 col-12">
-					<div class="card shadow-sm p-4">
+					<div class="dashboard-card card-savings card shadow-sm p-4">
 						<h6>Total Savings</h6>
-						<h3 class="text-success">₹ 4,900</h3>
+						<h3 class="text-success">&#8377; 4,900</h3>
 					</div>
 				</div>
 
 				<div class="col-xl-4 col-md-12 col-12">
-					<div class="card shadow-sm p-4">
+					<div class="dashboard-card card-budget card-primary card shadow-sm p-4">
 						<h6>Monthly Budget</h6>
-						<h3 class="text-primary">₹ ${sessionScope.income}</h3>
+						<h3 class="text-primary">&#8377; ${sessionScope.income}</h3>
 					</div>
 				</div>
 				<%
@@ -140,26 +149,31 @@ User user = (User) session.getAttribute("user");
 	</div>
 
 	<!-- ===== Mobile Offcanvas Sidebar ===== -->
-	<div class="offcanvas offcanvas-start bg-dark text-white" tabindex="-1"
+	<div class="offcanvas bg-primary offcanvas-start" tabindex="-1"
 		id="mobileSidebar">
 
 		<div class="offcanvas-header">
-			<h5>₹-Tracker</h5>
-			<button type="button" class="btn-close btn-close-white"
+			<h5>&#8377;-Tracker</h5>
+			<button type="button" class="btn-close"
 				data-bs-dismiss="offcanvas"></button>
 		</div>
 
-		<div class="offcanvas-body">
-			<a href="Dashboard?page=home" class="d-block text-white mb-3"> <i
-				class="bi bi-currency-rupee"></i><span>Dashboard</span></a> <a
-				href="Dashboard?page=expenses" class="d-block text-white mb-3">
+		<div class="offcanvas-body ">
+			<a href="Dashboard?page=home" class="d-block mb-3 <%= pageName.equals("home") ? "active" : "" %>"> 
+				<i class="bi bi-currency-rupee"></i><span>Dashboard</span>
+			</a> 
+			<a href="Dashboard?page=expenses" class="d-block mb-3 <%= pageName.equals("expenses") ? "active" : "" %>">
 				<i class="bi bi-cash-stack"></i> <span>Expenses</span>
-			</a> <a href="Dashboard?page=categories" class="d-block text-white mb-3">
+			</a> 
+			<a href="Dashboard?page=categories" class="d-block mb-3 <%= pageName.equals("categories") ? "active" : "" %>">
 				<i class="bi bi-tags"></i> <span>Categories</span>
-			</a> <a href="Dashboard?page=charts" class="d-block text-white mb-3"><i
-				class="bi bi-bar-chart me-2"></i>Charts</a> <a
-				href="Dashboard?page=history" class="d-block text-white mb-3"><i
-				class="bi bi-clock-history me-2"></i>History</a>
+			</a> 
+			<a href="Dashboard?page=charts" class="d-block mb-3 <%= pageName.equals("charts") ? "active" : "" %>">
+				<i class="bi bi-bar-chart me-2"></i>Charts
+			</a> 
+			<a href="Dashboard?page=history" class="d-block mb-3 <%= pageName.equals("history") ? "active" : "" %>">
+				<i class="bi bi-clock-history me-2"></i>History
+			</a>
 		</div>
 	</div>
 

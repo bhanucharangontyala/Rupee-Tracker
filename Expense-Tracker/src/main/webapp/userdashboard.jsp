@@ -56,7 +56,7 @@ User user = (User) session.getAttribute("user");
 	<div class="main-content">
 
 		<!-- Top Navbar -->
-		<div class="top-navbar">
+		<div class="top-navbar" id="t-nav">
 
 			<!-- Mobile Menu Button -->
 			<button class="btn btn-dark d-lg-none" data-bs-toggle="offcanvas"

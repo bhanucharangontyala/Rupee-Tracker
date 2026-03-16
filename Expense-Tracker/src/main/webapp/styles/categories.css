@@ -1,5 +1,22 @@
 @charset "UTF-8";
-/* Expense Tracker Styles - Add this to your JSP project */
+body {
+	background: #f4f6f9;
+}
+
+/* mobile friendly spacing */
+@media ( max-width :576px) {
+	.card {
+		padding: 15px !important;
+	}
+	h5 {
+		font-size: 18px;
+	}
+	table {
+		font-size: 14px;
+	}
+}
+
+
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 * {
@@ -62,8 +79,13 @@ h3::after {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.table thead tr {
-  background: linear-gradient(135deg, #0d9488, #0f766e);
+.table thead.table-primary th {
+    background-color: var(--bs-primary) !important;
+    color: #fff !important;
+}
+
+.table thead th {
+  color: white;
 }
 
 .table thead th {

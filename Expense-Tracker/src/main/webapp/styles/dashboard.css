@@ -25,7 +25,8 @@ body {
 	left: 0;
 	height: 100%;
 	width: var(--sidebar-width);
-	background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+	background: linear-gradient(135deg, var(--primary-color),
+		var(--secondary-color));
 	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 	transition: all var(--transition-speed) ease;
 	padding-top: 20px;
@@ -98,7 +99,7 @@ body {
 }
 
 /* Hide desktop sidebar on small devices */
-@media (max-width: 992px) {
+@media ( max-width : 992px) {
 	.sidebar-desktop {
 		display: none;
 	}
@@ -109,7 +110,7 @@ body {
 
 /* Top Navbar */
 .top-navbar {
-	background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+	background-color: #0d6efd;
 	color: white;
 	height: 70px;
 	display: flex;
@@ -120,6 +121,11 @@ body {
 	position: sticky;
 	top: 0;
 	z-index: 999;
+	color: white;
+}
+
+#t-nav {
+	background-color: #0d6efd;
 }
 
 .profile-img {
@@ -240,7 +246,8 @@ body {
 
 /* Alert Styles */
 .alert-success {
-	background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+	background: linear-gradient(135deg, var(--primary-color),
+		var(--secondary-color));
 	border: none;
 	color: white;
 	font-weight: 500;
@@ -249,7 +256,7 @@ body {
 }
 
 /* Responsive adjustments */
-@media (max-width: 576px) {
+@media ( max-width : 576px) {
 	.amount-box {
 		font-size: 1rem;
 		padding: 6px 12px;
@@ -263,7 +270,7 @@ body {
 }
 
 /* Active indicator for mobile */
-@media (max-width: 992px) {
+@media ( max-width : 992px) {
 	.offcanvas .offcanvas-body a.active::after {
 		height: 100%;
 		width: 4px;

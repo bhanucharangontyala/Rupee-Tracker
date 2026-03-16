@@ -197,11 +197,7 @@ body {
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item"><a class="nav-link text-light"
-                        href="./index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link text-light" href="#">About</a>
-                    </li>
-                    <li class="nav-item"><a class="nav-link text-light" href="#">Services</a>
-                    </li>
+                        href="./index.jsp">Home</a></li>
                 </ul>
             </div>
         </div>

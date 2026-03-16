@@ -16,9 +16,6 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
 	rel="stylesheet">
 
-<style>
-</style>
-
 </head>
 <body>
 	<!-- Include Expense Form -->
@@ -30,7 +27,7 @@
 				%>
 				<div class="card shadow-sm p-4">
 
-					<h4 class="mb-4 text-center fw-bold">Add Expense</h4>
+					<h4 class="mb-4 text-center text-primary fw-bold">Add Expense</h4>
 
 					<form action="ExpenseController" method="post">
 
@@ -38,7 +35,7 @@
 						<div class="mb-3">
 							<input type="hidden" name="action" value="add"> <input
 								type="hidden" name="categoryId" value="<%=e.getExpenseId()%>">
-								
+
 							<label for="category" class="form-label">Category</label> <select
 								class="form-select" id="category" name="category" required>
 								<option value="">Select Category</option>
@@ -75,7 +72,8 @@
 
 						<!-- Submit -->
 						<div class="d-grid">
-							<button type="submit" class="btn btn-dark">Add Expense</button>
+							<button type="submit" class="btn btn-primary">Add
+								Expense</button>
 						</div>
 
 					</form>

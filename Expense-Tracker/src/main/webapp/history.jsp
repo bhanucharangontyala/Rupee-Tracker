@@ -16,433 +16,7 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
 	rel="stylesheet">
 
-
-<style>
-body {
-	background: #f4f6f9;
-}
-
-/* mobile friendly spacing */
-@media ( max-width :576px) {
-	.card {
-		padding: 15px !important;
-	}
-	h5 {
-		font-size: 18px;
-	}
-	table {
-		font-size: 14px;
-	}
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: 'Space Grotesk', sans-serif;
-  background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 50%, #edf2f7 100%);
-  min-height: 100vh;
-  color: #1a202c;
-}
-
-/* ===== Page Container ===== */
-.container-fluid {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 20px;
-}
-
-/* ===== Page Title ===== */
-h3 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #1a202c;
-  margin-bottom: 30px;
-  position: relative;
-  display: inline-block;
-  letter-spacing: -0.5px;
-}
-
-h3::after {
-  content: '';
-  position: absolute;
-  bottom: -8px;
-  left: 0;
-  width: 60px;
-  height: 4px;
-  background: linear-gradient(90deg, #0d9488, #14b8a6);
-  border-radius: 2px;
-}
-
-/* ===== Main Table ===== */
-.table {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(12px);
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.08);
-  animation: tableSlideUp 0.6s ease-out;
-}
-
-@keyframes tableSlideUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.table thead tr {
-  background: linear-gradient(135deg, #0d9488, #0f766e);
-}
-
-.table thead th {
-  padding: 16px 24px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
-  color: #ffffff;
-  border: none;
-  white-space: nowrap;
-}
-
-.table tbody tr {
-  transition: all 0.25s ease;
-  border-bottom: 1px solid #f1f5f9;
-  animation: rowFadeIn 0.4s ease-out backwards;
-}
-
-.table tbody tr:nth-child(1) { animation-delay: 0.1s; }
-.table tbody tr:nth-child(2) { animation-delay: 0.15s; }
-.table tbody tr:nth-child(3) { animation-delay: 0.2s; }
-.table tbody tr:nth-child(4) { animation-delay: 0.25s; }
-.table tbody tr:nth-child(5) { animation-delay: 0.3s; }
-.table tbody tr:nth-child(6) { animation-delay: 0.35s; }
-.table tbody tr:nth-child(7) { animation-delay: 0.4s; }
-.table tbody tr:nth-child(8) { animation-delay: 0.45s; }
-
-@keyframes rowFadeIn {
-  from { opacity: 0; transform: translateX(-15px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-
-.table tbody tr:hover {
-  background: linear-gradient(90deg, rgba(13,148,136,0.06), rgba(13,148,136,0.02));
-  transform: translateX(4px);
-}
-
-.table tbody tr:last-child {
-  border-bottom: none;
-}
-
-.table tbody td {
-  padding: 14px 24px;
-  font-size: 0.9rem;
-  color: #334155;
-  border: none;
-  vertical-align: middle;
-}
-
-/* ===== Action Buttons in Table ===== */
-.table .btn {
-  border: none;
-  border-radius: 10px;
-  padding: 8px 12px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  font-family: 'Space Grotesk', sans-serif;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  margin-right: 6px;
-}
-
-.table .btn i {
-  font-size: 0.85rem;
-}
-
-.btn-success,
-.table .btn-success {
-  background: linear-gradient(135deg, #0d9488, #14b8a6);
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(13,148,136,0.25);
-}
-
-.btn-success:hover,
-.table .btn-success:hover {
-  background: linear-gradient(135deg, #0f766e, #0d9488);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(13,148,136,0.35);
-}
-
-.btn-danger,
-.table .btn-danger {
-  background: linear-gradient(135deg, #ef4444, #f87171);
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(239,68,68,0.25);
-}
-
-.btn-danger:hover,
-.table .btn-danger:hover {
-  background: linear-gradient(135deg, #dc2626, #ef4444);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(239,68,68,0.35);
-}
-
-/* ===== Modal Styles ===== */
-.modal-backdrop {
-  background: rgba(15, 23, 42, 0.5) !important;
-  backdrop-filter: blur(4px);
-}
-
-.modal-backdrop.show {
-  opacity: 1 !important;
-}
-
-.modal.fade .modal-dialog {
-  transform: scale(0.9) translateY(20px);
-  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.2s ease;
-}
-
-.modal.show .modal-dialog {
-  transform: scale(1) translateY(0);
-}
-
-.modal-content {
-  border: none;
-  border-radius: 20px;
-  overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.1);
-  background: #ffffff;
-  animation: modalPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-@keyframes modalPop {
-  from { opacity: 0; transform: scale(0.92); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-.modal-header {
-  background: linear-gradient(135deg, #0d9488, #0f766e);
-  padding: 20px 24px;
-  border: none;
-}
-
-.modal-header .modal-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #ffffff;
-  letter-spacing: -0.3px;
-}
-
-.modal-header .close,
-.modal-header .btn-close {
-  color: #ffffff;
-  opacity: 0.8;
-  font-size: 1.5rem;
-  text-shadow: none;
-  transition: opacity 0.2s, transform 0.2s;
-  filter: brightness(0) invert(1);
-}
-
-.modal-header .close:hover,
-.modal-header .btn-close:hover {
-  opacity: 1;
-  transform: rotate(90deg);
-}
-
-.modal-body {
-  padding: 28px 24px;
-}
-
-.modal-footer {
-  padding: 16px 24px 24px;
-  border: none;
-  gap: 10px;
-}
-
-/* Delete modal special header */
-.modal-header.bg-danger,
-.modal-header[style*="background"] {
-  background: linear-gradient(135deg, #ef4444, #dc2626) !important;
-}
-
-/* ===== Form Styles inside Modals ===== */
-.form-group,
-.mb-3 {
-  margin-bottom: 18px;
-}
-
-.form-group label,
-.form-label {
-  display: block;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.8px;
-  color: #64748b;
-  margin-bottom: 6px;
-}
-
-.form-control {
-  width: 100%;
-  padding: 10px 14px;
-  border: 2px solid #e2e8f0;
-  border-radius: 12px;
-  font-size: 0.9rem;
-  font-family: 'Space Grotesk', sans-serif;
-  color: #1a202c;
-  background: #f8fafc;
-  transition: all 0.25s ease;
-  outline: none;
-}
-
-.form-control:focus {
-  border-color: #0d9488;
-  background: #ffffff;
-  box-shadow: 0 0 0 4px rgba(13,148,136,0.12);
-}
-
-textarea.form-control {
-  resize: vertical;
-  min-height: 70px;
-}
-
-select.form-control {
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 14px center;
-  padding-right: 36px;
-}
-
-/* ===== Modal Footer Buttons ===== */
-.modal-footer .btn {
-  border: none;
-  border-radius: 12px;
-  padding: 10px 24px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  font-family: 'Space Grotesk', sans-serif;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.modal-footer .btn-secondary,
-.modal-footer .btn-default {
-  background: #f1f5f9;
-  color: #475569;
-}
-
-.modal-footer .btn-secondary:hover,
-.modal-footer .btn-default:hover {
-  background: #e2e8f0;
-  transform: translateY(-1px);
-}
-
-.modal-footer .btn-primary,
-.modal-footer .btn-success {
-  background: linear-gradient(135deg, #0d9488, #14b8a6);
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(13,148,136,0.3);
-}
-
-.modal-footer .btn-primary:hover,
-.modal-footer .btn-success:hover {
-  background: linear-gradient(135deg, #0f766e, #0d9488);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(13,148,136,0.4);
-}
-
-.modal-footer .btn-danger {
-  background: linear-gradient(135deg, #ef4444, #f87171);
-  color: #fff;
-  box-shadow: 0 2px 8px rgba(239,68,68,0.3);
-}
-
-.modal-footer .btn-danger:hover {
-  background: linear-gradient(135deg, #dc2626, #ef4444);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(239,68,68,0.4);
-}
-
-/* ===== Alert / Warning Icon for Delete ===== */
-.modal-body .text-center i.fa-exclamation-triangle,
-.modal-body .text-center .bi-exclamation-triangle {
-  color: #ef4444;
-  font-size: 2.5rem;
-  margin-bottom: 12px;
-  animation: warningPulse 1.5s ease-in-out infinite;
-}
-
-.side{
-	display:flex;
-}
-
-@keyframes warningPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-}
-
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .container-fluid {
-    padding: 20px 12px;
-  }
-
-  h3 {
-    font-size: 1.5rem;
-  }
-
-  .table thead th {
-    padding: 12px 14px;
-    font-size: 0.65rem;
-  }
-
-  .table tbody td {
-    padding: 10px 14px;
-    font-size: 0.8rem;
-  }
-
-  .table .btn {
-    padding: 6px 8px;
-    font-size: 0.7rem;
-  }
-
-  .modal-content {
-    border-radius: 16px;
-    margin: 10px;
-  }
-}
-
-/* ===== Scrollbar ===== */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
-}
-
-</style>
+<link href="./styles/history.css" rel="stylesheet">
 
 </head>
 <body>
@@ -459,7 +33,6 @@ select.form-control {
 						<i class="bi bi-tags me-2"></i>Your Expenses
 					</h5>
 
-					<!-- Responsive Table -->
 					<div class="table-responsive">
 
 						<%
@@ -471,7 +44,7 @@ select.form-control {
 						%>
 						<table class="table table-bordered table-hover align-middle">
 
-							<thead class="table-dark text-center">
+							<thead class="table-primary text-center">
 
 								<tr>
 									<th>Category</th>
@@ -573,12 +146,11 @@ select.form-control {
 
 						<div class="mb-3">
 
-							<label>Amount</label> <input type="number"
-								class="form-control" name="amount"
-								value="<%=ex.getAmount()%>">
+							<label>Amount</label> <input type="number" class="form-control"
+								name="amount" value="<%=ex.getAmount()%>">
 
 						</div>
-						
+
 						<div class="mb-3">
 
 							<label>Expense Date</label> <input type="date"
@@ -586,7 +158,7 @@ select.form-control {
 								value="<%=ex.getExpenseDate()%>">
 
 						</div>
-						
+
 						<div class="mb-3">
 
 							<label>Description</label> <input type="text"
@@ -594,7 +166,7 @@ select.form-control {
 								value="<%=ex.getDescription()%>">
 
 						</div>
-						
+
 					</div>
 
 					<div class="modal-footer">
@@ -618,7 +190,7 @@ select.form-control {
 	}
 	}
 	%>
-	
+
 	<!-- delete Expense Modal -->
 	<%
 	if (list != null) {

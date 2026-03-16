@@ -224,10 +224,10 @@ footer {
 				<div class="col-lg-6 mb-4 mb-lg-0">
 					<h2 class="section-title">About &#8377;-Tracker</h2>
 					<p class="lead">Smart money management for everyone</p>
-					<p>â¹-Tracker is a comprehensive personal finance application
+					<p>&#8377;-Tracker is a comprehensive personal finance application
 						designed to help you take control of your financial life. Whether
 						you're trying to save for a big purchase, pay off debt, or simply
-						understand where your money goes each month, â¹-Tracker provides
+						understand where your money goes each month, &#8377;-Tracker provides
 						the tools you need.</p>
 					<p>Our intuitive platform makes it easy to track expenses, set
 						budgets, visualize spending patterns, and achieve your financial
@@ -421,7 +421,7 @@ footer {
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4 mb-4 mb-md-0">
-					<h5 class="fw-bold mb-3">â¹-Tracker</h5>
+					<h5 class="fw-bold mb-3">&#8377;-Tracker</h5>
 					<p>Your trusted partner in financial management. Take control
 						of your expenses and achieve your financial goals with our
 						intuitive platform.</p>

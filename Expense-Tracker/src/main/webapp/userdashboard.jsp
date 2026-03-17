@@ -56,7 +56,7 @@ User user = (User) session.getAttribute("user");
 	<div class="main-content">
 
 		<!-- Top Navbar -->
-		<div class="top-navbar" id="t-nav">
+		<div class="top-navbar bg-light">
 
 			<!-- Mobile Menu Button -->
 			<button class="btn btn-dark d-lg-none" data-bs-toggle="offcanvas"
@@ -65,7 +65,7 @@ User user = (User) session.getAttribute("user");
 			</button>
 
 			<!-- Amount Left -->
-			<div class="amount-box">&#8377; ${not empty sessionScope.income and not empty sessionScope.totalEx 
+			<div class="amount-box bg-success text-light">&#8377; ${not empty sessionScope.income and not empty sessionScope.totalEx 
     ? sessionScope.income - sessionScope.totalEx 
     : 0}
 				Left This Month</div>
@@ -75,7 +75,7 @@ User user = (User) session.getAttribute("user");
 				<a href="#"
 					class="d-flex align-items-center text-decoration-none dropdown-toggle"
 					data-bs-toggle="dropdown"> <span
-					class="me-2 fw-semibold d-none d-sm-inline"> <%=((User) session.getAttribute("user")).getUserName()%>
+					class="me-2 fw-semibold  d-none d-sm-inline"> <%=((User) session.getAttribute("user")).getUserName()%>
 				</span> <img src="https://i.pravatar.cc/150?img=3" class="profile-img">
 				</a>
 				<ul class="dropdown-menu dropdown-menu-end">
@@ -149,7 +149,7 @@ User user = (User) session.getAttribute("user");
 	</div>
 
 	<!-- ===== Mobile Offcanvas Sidebar ===== -->
-	<div class="offcanvas bg-primary offcanvas-start" tabindex="-1"
+	<div class="offcanvas offcanvas-start" tabindex="-1"
 		id="mobileSidebar">
 
 		<div class="offcanvas-header">
@@ -158,7 +158,7 @@ User user = (User) session.getAttribute("user");
 				data-bs-dismiss="offcanvas"></button>
 		</div>
 
-		<div class="offcanvas-body ">
+		<div class="offcanvas-body">
 			<a href="Dashboard?page=home" class="d-block mb-3 <%= pageName.equals("home") ? "active" : "" %>"> 
 				<i class="bi bi-currency-rupee"></i><span>Dashboard</span>
 			</a> 

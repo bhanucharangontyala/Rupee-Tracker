@@ -27,6 +27,14 @@ public class ExpenseController extends HttpServlet {
 		User user = (User) request.getSession().getAttribute("user");
 		int userId = user.getUserId();
 		String action = request.getParameter("action");
+		// income validation
+		Double income = (Double) request.getSession().getAttribute("income");
+		Double totalExpenses = (Double) request.getSession().getAttribute("totalEx");
+		if (income == null || totalExpenses == null) {
+			request.getSession().setAttribute("message", "Error: Missing income or expense data.");
+			response.sendRedirect("Dashboard?page=expenses");
+			return;
+		}
 		ExpenseService exser = new ExpenseService();
 		ExpenseDAOInterface exDAO = new ExpenseDAO();
 		exDAO.expensesSum(user);
@@ -36,7 +44,12 @@ public class ExpenseController extends HttpServlet {
 			String description = request.getParameter("description");
 			LocalDate today = LocalDate.now();
 			java.sql.Date currDate = java.sql.Date.valueOf(today);
-
+			// Check if adding this expense exceeds income
+			if (totalExpenses + amount > income) {
+				request.getSession().setAttribute("message", "Adding this expense would exceed your income!");
+				response.sendRedirect("Dashboard?page=expenses");
+				return;
+			}
 			// setting the expense data to model
 			Expenses ex = new Expenses();
 			ex.setUserId(userId);
@@ -60,6 +73,20 @@ public class ExpenseController extends HttpServlet {
 			String dateStr = request.getParameter("expenseDate");
 			Date expDate = Date.valueOf(dateStr);
 			String description = request.getParameter("description");
+			
+			// getting the old expense id data
+			Expenses oldExp = exDAO.getExpenseById(expenseId);
+			double oldAmount = oldExp.getAmount();
+			
+			 // Check if updating causes exceeding income
+	        double diff = amount - oldAmount;
+	        if (totalExpenses + diff > income) {
+	            request.getSession().setAttribute("message", "Updating this expense would exceed your income!");
+	            response.sendRedirect("Dashboard?page=history");
+	            return;
+	        }
+	        
+			//setting data to model
 			Expenses ex = new Expenses();
 			ex.setExpenseId(expenseId);
 			ex.setAmount(amount);

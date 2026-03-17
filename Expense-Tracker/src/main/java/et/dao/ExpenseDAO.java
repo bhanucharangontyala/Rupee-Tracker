@@ -69,7 +69,8 @@ public class ExpenseDAO implements ExpenseDAOInterface {
 		boolean status = false;
 		try {
 			con = ET_DBConnection.getConnection();
-			PreparedStatement ps = con.prepareStatement("update expenses set amount=?,expense_date=?,description=? where expense_id =?");
+			PreparedStatement ps = con
+					.prepareStatement("update expenses set amount=?,expense_date=?,description=? where expense_id =?");
 			ps.setDouble(1, e.getAmount());
 			ps.setDate(2, e.getExpenseDate());
 			ps.setString(3, e.getDescription());
@@ -110,7 +111,7 @@ public class ExpenseDAO implements ExpenseDAOInterface {
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, u.getUserId());
 			ResultSet rs = ps.executeQuery();
-			while(rs.next()) {
+			while (rs.next()) {
 				totalEx = rs.getDouble(1);
 				u.setTotalExpenses(rs.getDouble(1));
 			}
@@ -119,7 +120,29 @@ public class ExpenseDAO implements ExpenseDAOInterface {
 		}
 		return totalEx;
 	}
-	
-	
+
+	@Override
+	public Expenses getExpenseById(int expenseId) {
+		Expenses exp = null;
+		try (Connection con = ET_DBConnection.getConnection()) {
+			String sql = "select * from expenses where expense_id = ?;";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, expenseId);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				exp = new Expenses();
+				exp.setExpenseId(rs.getInt("expense_id"));
+				exp.setUserId(rs.getInt("user_id"));
+				exp.setCategoryId(rs.getInt("category_id"));
+				exp.setAmount(rs.getDouble("amount"));
+				exp.setExpenseDate(rs.getDate("expense_date"));
+				exp.setDescription(rs.getString("description"));
+				exp.setIs_active(rs.getInt("is_active"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return exp;
+	}
 
 }

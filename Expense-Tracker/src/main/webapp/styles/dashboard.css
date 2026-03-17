@@ -25,8 +25,6 @@ body {
 	left: 0;
 	height: 100%;
 	width: var(--sidebar-width);
-	background: linear-gradient(135deg, var(--primary-color),
-		var(--secondary-color));
 	box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 	transition: all var(--transition-speed) ease;
 	padding-top: 20px;
@@ -50,24 +48,25 @@ body {
 }
 
 .sidebar-desktop a:hover {
-	background: rgba(21, 48, 124, 1);
+	background: rgba(255, 255, 255, 0.1);
 	border-left: 4px solid var(--accent-color);
 	color: white;
 }
 
 .sidebar-desktop a.active {
 	color: white;
-	background: rgba(21, 48, 124, 1);
+	background: rgba(255, 255, 255, 0.15);
 	border-left: 4px solid var(--accent-color);
+	position: relative;
 }
 
-.sidebar-desktop a.active::after {
+.sidebar-desktop a.active::before {
 	content: '';
 	position: absolute;
 	left: 0;
 	bottom: 0;
-	height: 3px;
-	width: 100%;
+	height: 100%;
+	width: 4px;
 	background: var(--accent-color);
 }
 
@@ -99,7 +98,7 @@ body {
 }
 
 /* Hide desktop sidebar on small devices */
-@media ( max-width : 992px) {
+@media (max-width: 992px) {
 	.sidebar-desktop {
 		display: none;
 	}
@@ -110,7 +109,6 @@ body {
 
 /* Top Navbar */
 .top-navbar {
-	background-color: #0d6efd;
 	color: white;
 	height: 70px;
 	display: flex;
@@ -121,11 +119,6 @@ body {
 	position: sticky;
 	top: 0;
 	z-index: 999;
-	color: white;
-}
-
-#t-nav {
-	background-color: #0d6efd;
 }
 
 .profile-img {
@@ -138,7 +131,7 @@ body {
 
 .amount-box {
 	font-weight: 600;
-	color: white;
+	color: green;
 	font-size: 1.2rem;
 	background: rgba(255, 255, 255, 0.2);
 	padding: 8px 15px;
@@ -246,8 +239,7 @@ body {
 
 /* Alert Styles */
 .alert-success {
-	background: linear-gradient(135deg, var(--primary-color),
-		var(--secondary-color));
+	background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
 	border: none;
 	color: white;
 	font-weight: 500;
@@ -256,7 +248,7 @@ body {
 }
 
 /* Responsive adjustments */
-@media ( max-width : 576px) {
+@media (max-width: 576px) {
 	.amount-box {
 		font-size: 1rem;
 		padding: 6px 12px;
@@ -270,7 +262,7 @@ body {
 }
 
 /* Active indicator for mobile */
-@media ( max-width : 992px) {
+@media (max-width: 992px) {
 	.offcanvas .offcanvas-body a.active::after {
 		height: 100%;
 		width: 4px;

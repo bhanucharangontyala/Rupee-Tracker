@@ -15,4 +15,6 @@ public interface ExpenseDAOInterface {
 	public double expensesSum(User u);
 
 	public List<Expenses> selectUserExpenses(int userId);
+	
+	public Expenses getExpenseById(int expensId);
 }

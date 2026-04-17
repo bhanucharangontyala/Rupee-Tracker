@@ -107,7 +107,12 @@ public class ExpenseDAO implements ExpenseDAOInterface {
 	public double expensesSum(User u) {
 		double totalEx = 0;
 		try (Connection con = ET_DBConnection.getConnection()) {
-			String sql = "select sum(amount) from expenses where user_id = ? and is_active =1;";
+			String sql = "SELECT SUM(amount) \r\n"
+					+ "FROM expenses \r\n"
+					+ "WHERE user_id = ? \r\n"
+					+ "  AND is_active = 1\r\n"
+					+ "  AND MONTH(expense_date) = MONTH(CURRENT_DATE())\r\n"
+					+ "  AND YEAR(expense_date) = YEAR(CURRENT_DATE());";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, u.getUserId());
 			ResultSet rs = ps.executeQuery();

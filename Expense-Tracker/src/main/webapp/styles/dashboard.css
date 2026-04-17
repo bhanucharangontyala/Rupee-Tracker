@@ -191,7 +191,7 @@ body {
 
 /* Mobile Offcanvas */
 .offcanvas {
-	background: linear-gradient(135deg, var(--dark-color), #0a0a0a);
+	background: linear-gradient(135deg, var(--dark-color), rgb(57, 77, 249));
 	color: white;
 }
 
@@ -250,7 +250,8 @@ body {
 /* Responsive adjustments */
 @media (max-width: 576px) {
 	.amount-box {
-		font-size: 1rem;
+		height: 1rem;
+		font-size: 0.5rem;
 		padding: 6px 12px;
 	}
 	.top-navbar {

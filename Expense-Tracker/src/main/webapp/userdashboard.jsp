@@ -155,7 +155,7 @@ User user = (User) session.getAttribute("user");
 		<div class="offcanvas-header">
 			<h5>&#8377;-Tracker</h5>
 			<button type="button" class="btn-close"
-				data-bs-dismiss="offcanvas"></button>
+				data-bs-dismiss="offcanvas">hii</button>
 		</div>
 
 		<div class="offcanvas-body">
